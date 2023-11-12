@@ -1,10 +1,11 @@
-
+import './table.css'
 
 function App() {
 
   return (
-    <>
-    </>
+    <div className="h-screen flex justify-center items-center">
+        
+    </div>
   )
 }
 
