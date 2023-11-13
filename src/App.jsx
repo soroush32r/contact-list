@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Table, Input } from './components'
+import { Table, NewUser } from './components'
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="w-screen h-screen flex justify-center items-center">
       <div className="w-5/6 flex flex-col max-h-screen">
-        <Input addNewUser={newUserAdd}/>
+        <NewUser addNewUser={newUserAdd}/>
         <Table usersData={usersData}/>
       </div>
     </div>
