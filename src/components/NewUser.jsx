@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Input from './Input'
+import clsx from "clsx";
 
 
 export const NewUser = ({ addNewUser }) => {
@@ -46,9 +47,10 @@ export const NewUser = ({ addNewUser }) => {
   return (
     <div className="flex justify-start my-2 w-full">
       <Input borderSet={isNameFilled} isClicked={isClicked} placeholder="Name" value={name} handleChange={handleNameChange}/>
+      {console.log(name === '' , isClicked)}
       <Input borderSet={isPhoneFilled} isClicked={isClicked} placeholder="Phone" value={phone} handleChange={handlePhoneChange}/>
       <Input borderSet={isEmailFilled} isClicked={isClicked} placeholder="Email" value={email} handleChange={handleEmailChange}/>
-      <button className="py-2 px-4 text-center bg-blue-500 rounded-md text-white" onClick={handleUserAdd}>+Add</button>
+      <button className="px-4 text-center bg-blue-500 rounded-md text-white" onClick={handleUserAdd}>+Add</button>
     </div>
   )
 }
