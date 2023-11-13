@@ -1,28 +1,24 @@
+import '../table.css'
 
-export const Table = () => {
+export const Table = ( {usersData} ) => {
   return (
-    <div className="w-screen flex justify-center">
-          <table>
-            <thead>
-              <tr className="text-left border-y-2">
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="p-4">
-                <td>Soroush Ranjbar</td>
-                <td>+989394830919</td>
-                <td>Ranjbar.soroush32@gmail.com</td>
-              </tr>
-              <tr>
-                <td>Soroush Ranjbar</td>
-                <td>+989394830919</td>
-                <td>Ranjbar.soroush32@gmail.com</td>
-              </tr>
-            </tbody>
-          </table>
-       </div>
+    <table className="flex-grow w-full  border-collapse">
+      <thead>
+        <tr className="text-left border-y-2">
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {usersData.length > 0 ? usersData.map((item) => (
+          <tr key={item.id}>
+            <td>{item.name}</td>
+            <td>{item.phone}</td>
+            <td>{item.email}</td>
+          </tr>
+        )) : (<tr><td colSpan={3}>No User</td></tr>)}
+      </tbody>
+    </table>
   )
 }
