@@ -1,6 +1,6 @@
 import '../table.css'
 
-export const Table = ( {usersData} ) => {
+export const Table = ( {usersData, searchTerm} ) => {
   return (
     <table className="flex-grow w-full  border-collapse">
       <thead>
@@ -11,7 +11,9 @@ export const Table = ( {usersData} ) => {
         </tr>
       </thead>
       <tbody>
-        {usersData.length > 0 ? usersData.map((item) => (
+        {usersData.length > 0 ? usersData
+        .filter(({name}) => name.includes(searchTerm))
+        .map((item) => (
           <tr key={item.id}>
             <td>{item.name}</td>
             <td>{item.phone}</td>
