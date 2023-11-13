@@ -1,4 +1,4 @@
-import '../table.css'
+import '../styles/table.css'
 
 export const Table = ( {usersData, searchTerm} ) => {
   return (

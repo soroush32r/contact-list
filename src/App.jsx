@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Table, NewUser, Search } from './components'
-
+import { useLocalStorage } from './hooks/useLocalStorage'
 
 function App() {
-  const [ usersData,setUsersData ] = useState([]);
+  const [ users, { set }] = useLocalStorage('users')
+  const [ usersData,setUsersData ] = useState(users || []);
   const [ searchTerm, setSearchTerm ] = useState('')
 
   const newUserAdd = ( name, phone, email ) => {
@@ -13,7 +14,9 @@ function App() {
       'email': email,
       'phone': phone
     }
-    setUsersData([newUser , ...usersData]);
+    const allUser = [newUser , ...usersData] 
+    setUsersData(allUser);
+    set('users' , allUser)
   }
 
   const handleSearchChange = (term) => {
