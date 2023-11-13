@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Input from "./Input"
 
-export const Search = ( {usersData, handleSearchChange} ) => {
+export const Search = ( { handleSearchChange } ) => {
   const [ term, setTerm ] = useState('')
   
   const handleSearch = ({target}) => {

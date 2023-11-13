@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="w-screen h-screen flex justify-center items-center">
       <div className="w-5/6 flex flex-col max-h-screen">
-        <Search usersData={usersData} handleSearchChange = {handleSearchChange}/>
+        <Search handleSearchChange = {handleSearchChange}/>
         <NewUser addNewUser={newUserAdd}/>
         <Table usersData={usersData} searchTerm={searchTerm}/>
       </div>

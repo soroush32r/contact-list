@@ -1,6 +1,7 @@
 import '../styles/table.css'
 
 export const Table = ( {usersData, searchTerm} ) => {
+  
   return (
     <table className="flex-grow w-full  border-collapse">
       <thead>
@@ -12,7 +13,7 @@ export const Table = ( {usersData, searchTerm} ) => {
       </thead>
       <tbody>
         {usersData.length > 0 ? usersData
-        .filter(({name}) => name.includes(searchTerm))
+        .filter(({name}) => name.toLowerCase().includes(searchTerm))
         .map((item) => (
           <tr key={item.id}>
             <td>{item.name}</td>
